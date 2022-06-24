@@ -1,0 +1,31 @@
+{
+  "users": [
+    {
+      "name": "Rodrigo Duarte",
+      "date": "14/06/2022",
+      "update": "20/06/2022",
+      "cpf": "12345622222",
+      "phone": "48987661223",
+      "id": 1
+    }
+  ],
+  "product": [
+    {
+      "name": "iPhone",
+      "description": "For those who want inovation in your hands",
+      "category": "eletronic",
+      "quantity": "5",
+      "value": 2500.68,
+      "company": 1,
+      "id": 1
+    }
+  ],
+  "company": [
+    {
+      "name": "Apple",
+      "date": "14/06/2022",
+      "cnpj": "12345678901234",
+      "id": 1
+    }
+  ]
+}
