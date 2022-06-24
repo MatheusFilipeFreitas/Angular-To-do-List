@@ -1,4 +1,5 @@
-# DEVinShop-UFN
+<h1 align="center"> DEVinShop UFN </h1>
+<h2 align="center"> 💻 Projeto avaliativo de Aplicações Web da Universidade Franciscana (UFN) 💻</h2>
 
 <h3 align="center">***********🔧 INSTRUÇÕES 🔧***********</h3>
 <h4 align="center">Como executar a aplicação</h4>
