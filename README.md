@@ -6,7 +6,7 @@
 
 Para executrar a aplicação, siga os seguintes passos:
 
-* Acesse o terminal e clone o projeto ***git clone ***
+* Acesse o terminal e clone o projeto ***git clone***
 * Acesse a pasta ***GerenciamentoAgro/db*** e execute o comando ***npm install***
 * Após a aplicação finalizar a instalação das dependências, execute o comando ***npm start***
 * Acesse a pasta ***GerenciamentoAgro***
