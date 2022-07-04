@@ -10,17 +10,33 @@ import { LoginService } from './services/login.service';
 export class AppComponent {
   title = 'GerenciamentoAgro';
 
+  empresaLogada: boolean;
+
   constructor(private router: Router){
 
   }
 
   ngOnInit(){
-    if(LoginService.empresaLogada){ //Se a empresa está logada ela vai para
-      this.router.navigate(['/home'])
+    this.validaLogin();
+  }
+  
+
+  validaLogin(){
+
+    LoginService.empresaLogada.subscribe(
+      {
+        next:(data:boolean)=>{
+          this.empresaLogada = data;
+        }
+      }
+    );
+
+    if(this.empresaLogada){ //Se a empresa está logada ela vai para
+      //this.router.navigate(['/home'])
+      console.log("Encaminhada para a tela HOME com sucesso");
     }
     else{//Se ela não está logada ela vai para a área de login/cadastro
       this.router.navigate(['/login'])
     }
   }
-  
 }

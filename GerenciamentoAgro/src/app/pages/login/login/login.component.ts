@@ -16,15 +16,26 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
+    
   }
 
   logar(){
-    console.log(this.loginService.validarLogin(this.login, this.senha));
-    if(LoginService.empresaLogada){
-      this.router.navigate(['/']);
-      console.log("chegou")
-    }
+
+    this.loginService.validarLogin(this.login,this.senha)
+    
+    //pega no service do login se tem empresa logada e popula na variável local
+    LoginService.empresaLogada.subscribe(
+      {
+        next: (data:boolean) => {
+          if(data){
+            this.router.navigate(['/login/cadastro'])//Encaminhar para a home
+          }
+          else{
+            //mandar a mensagem do snackbar de falha no login
+          }
+        }
+      }
+    );
   }
 
 }
