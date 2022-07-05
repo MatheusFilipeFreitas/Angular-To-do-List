@@ -5,12 +5,14 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { BackgroundComponent } from './pages/crud/background/background.component';
 import { LoginComponent } from './pages/login/login/login.component';
 import { LoginCadastroComponent } from './pages/login/login-cadastro/login-cadastro.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    BackgroundComponent,
     LoginComponent,
     LoginCadastroComponent
   ],

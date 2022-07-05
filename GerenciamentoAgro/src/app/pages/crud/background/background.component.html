@@ -1,0 +1,158 @@
+<header>
+    <section class="left">
+        <div class="hamburguer">
+            <i class="fa-solid fa-bars-staggered"></i>
+        </div>
+        <div class="divader">
+
+        </div>
+        <span routerLink="/home">Gerenciamento Agro</span>
+    </section>
+    <section class="right">
+        <div class="email-user">
+            <span>senior@seniorsistemas.com</span>
+        </div>
+        <div class="divader">
+
+        </div>
+        <div class="profile-user">
+            <img src="./assets/img/user-images/user-default-img.png" alt="user-photo" width="45px" height="45px">
+            <span>Senior Sistemas</span>
+        </div>
+
+
+    </section>
+</header>
+
+<main>
+    <section class="sidenav">
+            <ul class="nav-list">
+                <li class="nav-item" routerLink="/home" routerLinkActive="active" >
+                    <a>
+                        <i class="fa-solid fa-house"></i>
+                        <span>Home</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a>
+                        <i class="fa-solid fa-users"></i>
+                        <span>Funcionário</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a>
+                        <i class="fa-solid fa-bowl-food"></i>
+                        <span>Grão</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a>
+                        <i class="fa-solid fa-tractor"></i>
+                        <span>Fazenda</span>
+                    </a>
+                </li>
+            </ul>
+    </section>
+
+    <section class="container">
+        <div class="title">
+            <h2>Home</h2>
+        </div>
+          <!--
+        <div class="table-area">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Nome</th>
+                        <th scope="col">Telefone</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let data of data">
+                        <td> 
+                            <div class="block-info">
+                                <span>{{ data.name }}</span>
+                                <span>Cadastrado em {{ data.data }}</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="block-info">
+                                {{ data.telefone }}
+                            </div>
+                        </td>
+                        <td>
+                            <div class="block-info">
+                                {{ data.email }}
+                            </div>
+                        </td>
+                        <td>
+                            <div class="block-info">
+                                {{ data.status }}
+                            </div>  
+                        </td>
+                        <td>
+                            <div class="activities">
+                                <i class="fa-solid fa-pen"></i>
+                                <i class="fa-solid fa-trash"></i>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+            -->
+            <div class="cards-area">
+                <div class="card">
+                    <section class="title-card">
+                        TOTAL DE FUNCIONÁRIOS
+                    </section>
+                    <section class="content">
+                        {{ data.length }}
+                    </section>
+                </div>
+                <div class="card">
+                    <section class="title-card">
+                        TOTAL DE FAZENDAS
+                    </section>
+                    <section class="content">
+                        {{ data.length }}
+                    </section>
+                </div>
+                <div class="card">
+                    <section class="title-card">
+                        TOTAL DE GRÃOS
+                    </section>
+                    <section class="content">
+                        {{ data.length }}
+                    </section>
+                </div>
+            </div> 
+            <div class="chart-area">
+
+            </div>
+            <div class="modal-area">
+                <section class="top"> 
+                    <i class="fa-solid fa-xmark"></i>
+                </section>
+                <section class="modal-content">
+                    <div class="title-modal">
+                        Update
+                    </div>
+                    <form>
+                        <div class="input-area">
+                            <label for="">Nome</label>
+                            <input type="text" name="" id="">
+                        </div>
+                        <div class="input-area">
+                            <label for="">Idade</label>
+                            <input type="text" name="" id="">
+                        </div>
+                    </form>
+                </section>
+            </div>
+    </section>
+
+</main>

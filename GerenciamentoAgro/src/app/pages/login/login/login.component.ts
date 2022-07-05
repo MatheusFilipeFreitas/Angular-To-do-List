@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
       {
         next: (data:boolean) => {
           if(data){
-            this.router.navigate(['/login/cadastro'])//Encaminhar para a home
+            this.router.navigate(['/home'])//Encaminhar para a home
           }
           else{
             //mandar a mensagem do snackbar de falha no login

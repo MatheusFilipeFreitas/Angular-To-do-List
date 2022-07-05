@@ -14,22 +14,22 @@ export class EmpresaService {
   }
 
   public getEmpresas():Observable<any>{
-    return(this.http.get('http://localhost:3000/empresas'));
+    return(this.http.get('http://localhost:3001/empresas'));
   }
 
   public getEmpresa( id:number):Observable<any>{
-    return(this.http.get('http://localhost:3000/empresas/' + id));
+    return(this.http.get('http://localhost:3001/empresas/' + id));
   }
 
   public postEmpresa(empresa: Empresa):Observable<any>{
-    return(this.http.post('http://localhost:3000/empresas/',empresa));
+    return(this.http.post('http://localhost:3001/empresas/',empresa));
   }
 
   public putEmpresa(empresa: Empresa, id: number):Observable<any>{
-    return(this.http.put('http://localhost:3000/empresas/' + id, empresa))
+    return(this.http.put('http://localhost:3001/empresas/' + id, empresa))
   }
 
   public deleteEmpresa(id: number):Observable<any>{
-    return(this.http.delete('http://localhost:3000/empresas/' + id));
+    return(this.http.delete('http://localhost:3001/empresas/' + id));
   }
 }
