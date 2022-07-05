@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { LoginService } from './services/login.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,35 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'GerenciamentoAgro';
+
+  empresaLogada: boolean;
+
+  constructor(private router: Router){
+
+  }
+
+  ngOnInit(){
+    this.validaLogin();
+  }
+  
+
+  validaLogin(){
+
+    LoginService.empresaLogada.subscribe(
+      {
+        next:(data:boolean)=>{
+          if(data){ //Se a empresa está logada ela vai para
+            this.router.navigate(['/home'])
+            console.log("To na Home");
+          }
+          else{//Se ela não está logada ela vai para a área de login/cadastro
+            this.router.navigate(['/login'])
+            console.log("Entrei aqui");
+          }
+        }
+      }
+    );
+
+    
+  }
 }
