@@ -1,4 +1,4 @@
-<h1 align="center"> Gerenciamento Agro </h1>
+<h1 align="center"> To Do List </h1>
 <h2 align="center"> 💻 Projeto avaliativo de Aplicações Web da Universidade Franciscana (UFN) 💻</h2>
 
 <h3 align="center">***********🔧 INSTRUÇÕES 🔧***********</h3>
