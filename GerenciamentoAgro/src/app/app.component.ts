@@ -22,8 +22,8 @@ export class AppComponent {
   
 
   validaLogin(){
-    if(environment.empresaLogada){
-      this.router.navigate(['/home']);
+    if(environment.usuarioLogado){
+      this.router.navigate(['']);
     }
     else{
       this.router.navigate(['/login']);

@@ -12,19 +12,19 @@ export class LoginComponent implements OnInit {
 
   login: string;
   senha: string;
-  empresaLogada:boolean;
+  usuarioLogado:boolean;
 
   constructor(private loginService: LoginService, private router: Router) { 
   }
 
   ngOnInit(): void {
-    this.empresaLogada = environment.empresaLogada;
+    this.usuarioLogado = environment.usuarioLogado;
     this.validarLogin();
   }
 
   validarLogin(){
 
-    if(this.empresaLogada){
+    if(this.usuarioLogado){
       this.router.navigate([''])
     }
 
