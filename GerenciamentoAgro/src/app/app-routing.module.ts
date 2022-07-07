@@ -3,14 +3,16 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginCadastroComponent } from './pages/login/login-cadastro/login-cadastro.component';
 import { LoginComponent } from './pages/login/login/login.component';
-// import { LoginGuard } from './guards/login.guard';
+import { LoginGuard } from './guards/login.guard';
 import { AppComponent } from './app.component';
+import { HistoryComponent } from './pages/history/history.component';
 
 const routes: Routes = [
-  {path:'', redirectTo: 'list', pathMatch: 'full'},
+  {path:'', redirectTo: 'login', pathMatch: 'full'},
   {path:'login',component: LoginComponent},
-  {path:'list',component: ListComponent/*, canActivate:[LoginGuard]*/},
-  //{path:'login/cadastro',component: LoginCadastroComponent}
+  {path:'list',component: ListComponent, /*canActivate:[LoginGuard]*/},
+  {path:'logon',component: LoginCadastroComponent},
+  {path:'history',component: HistoryComponent}
 ];
 
 @NgModule({

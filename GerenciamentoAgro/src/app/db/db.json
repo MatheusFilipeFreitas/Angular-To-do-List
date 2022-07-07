@@ -1,36 +1,4 @@
 {
-  "usuario": [
-    {
-      "id": 1,
-      "nome": "Augusto",
-      "email": "a@a",
-      "senha": "123"
-    },
-    {
-      "id": 2,
-      "nome": "a",
-      "email": "a",
-      "senha": "123"
-    },
-    {
-      "nome": "teste",
-      "email": "blablabla@email.com",
-      "senha": "novasenha",
-      "id": 3
-    }
-  ],
-  "item": [
-    {
-      "id": 1,
-      "descricao": "Primeiro item",
-      "status": true,
-      "terminada": "06/07/2022"
-    },
-    {
-      "descricao": "Segundo item atualizado",
-      "status": true,
-      "terminada": "06/07/2022",
-      "id": 2
-    }
-  ]
+  "usuario": [],
+  "item": []
 }

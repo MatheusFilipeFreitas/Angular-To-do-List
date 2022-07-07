@@ -4,22 +4,40 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgb(236, 236, 236);
+    background-color: #2f313a;
 }
 
 .areaLogin{
-    width: calc(100%/6);
-    height: calc(100%/2);
+    margin: 30px;
+    width: 500px;
+    height: 600px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    border: 1px solid black;
-    background-color: white;
-    box-shadow: 0 0 10px 0.1px rgb(143, 143, 143);
+    border: 0.5px solid #3e3f42;
+    box-shadow: 0px 2.76726px 2.21381px rgba(0, 0, 0, 0.0196802),
+      0px 6.6501px 5.32008px rgba(0, 0, 0, 0.0282725),
+      0px 12.5216px 10.0172px rgba(0, 0, 0, 0.035),
+      0px 22.3363px 17.869px rgba(0, 0, 0, 0.0417275),
+      0px 41.7776px 33.4221px rgba(0, 0, 0, 0.0503198),
+      0px 100px 80px rgba(0, 0, 0, 0.07);
+    border-radius: 5px;
 }
 
-button{
-    width: calc(100%/2);
+mat-form-field {
+    width: 300px;
+    color: white;
+  }
+  
+  .buttons {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  button {
+    margin-top: 20px;
+    width: 200px;
     height: auto;
-}
+  }

@@ -14,7 +14,7 @@ export class LoginGuard implements CanActivate {
 
   canActivate(
     route: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot): Observable<boolean> | boolean 
+    state: RouterStateSnapshot): boolean 
   {
     return(environment.usuarioLogado);    
   }

@@ -1,18 +1,25 @@
 <div class="paginaLogin">
     <div class="areaLogin">
-        
         <div class="form-group">
-        <label for="login">Login</label>
-        <input type="text" class="form-control" id="login" [(ngModel)]="login">
+            <mat-form-field appearance="outline">
+                <mat-label>exemplo@exemplo.com</mat-label>
+                <input matInput placeholder="Type Your email" [(ngModel)]="login">
+                <mat-hint>Email</mat-hint>
+            </mat-form-field>
         </div>
 
         <div class="form-group">
-        <label for="senha">Senha</label>
-        <input type="password" class="form-control" id="senha" [(ngModel)]="senha">
+            <mat-form-field appearance="outline">
+                <mat-label>example</mat-label>
+                <input type="password"matInput placeholder="Type your password" [(ngModel)]="senha">
+                <mat-hint>Password</mat-hint>
+            </mat-form-field>
+        </div>
+        <div class="buttons">
+            <button type="submit" class="btn btn-primary" (click)="logar()">Logar</button>
+            <button type="submit" class="btn btn-primary" routerLink="/logon">Cadastrar</button>
         </div>
 
-        <br><button type="submit" class="btn btn-primary" (click)="logar()">Logar</button>
-        <br><button type="submit" class="btn btn-primary" routerLink="/login/cadastro">Cadastrar</button>
     </div>
 </div>
 

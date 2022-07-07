@@ -1,13 +1,19 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer"
   />
 <header>
-    <i class="fa-solid fa-bars"></i>
+    <i class="fa-solid fa-bars" (click)="showSidebar()"></i>
     <p class="app-name">JUST TODO IT</p>
-
+    <i class="fa-solid fa-arrow-right-from-bracket" (click)="logout()"></i>
 </header>
 <main>
+    <div id="sidenav">
+            <ul class="nav-list">
+                <li class="nav-item" routerLink="/list" routerLinkActive="active">List</li>
+                <li class="nav-item" routerLink="/history" routerLinkActive="active">History</li>
+            </ul>
+    </div>
     <div class="time-date">
-        <p id="ctime">00</p>
+        <p id="ctime">{{ items.length}}</p>
         <p id="cdate">Number of Tasks</p>
     </div>
     <div id="add-background">
@@ -16,7 +22,7 @@
                 <mat-label>Description</mat-label>
                 <input matInput placeholder="Placeholder" [(ngModel)]="description">
                 <mat-hint>Task Description</mat-hint>
-              </mat-form-field>
+            </mat-form-field>
               <div class="buttons">
                 <button type="submit" class="btn btn-primary" (click)="add()">Add</button>
                 <button type="submit" class="btn btn-primary" (click)="closeModal()">Cancel</button>
@@ -24,15 +30,10 @@
         </div>
     </div>
     <ul id="list">
-        <li>
-            <i class="fa-solid fa-circle false"></i>
-            <p id="item">Call Mumsy</p>
-            <i class="fa fa-trash"></i>
-        </li>
-        <li>
-            <i class="fa-solid fa-circle true"></i>
-            <p id="item">Take coffee in the morning</p>
-            <i class="fa fa-trash"></i>
+        <li class="list-item" *ngFor="let item of items">
+            <i class="fa-solid fa-circle {{ item.status }}" (click)="setStatus(item)"></i>
+            <p id="item">{{item.descricao}}</p>
+            <i class="fa fa-trash" (click)="delete(item)"></i>
         </li>
     </ul>
     <i class="fa-solid fa-circle-plus" (click)="showModal()"></i>

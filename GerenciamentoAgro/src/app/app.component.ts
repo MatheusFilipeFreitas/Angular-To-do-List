@@ -23,7 +23,7 @@ export class AppComponent {
 
   validaLogin(){
     if(environment.usuarioLogado){
-      this.router.navigate(['']);
+      this.router.navigate(['/list']);
     }
     else{
       this.router.navigate(['/login']);

@@ -12,6 +12,7 @@ import { LoginCadastroComponent } from './pages/login/login-cadastro/login-cadas
 import { ListComponent } from './pages/list/list.component';
 import {MatInputModule} from '@angular/material/input';
 import { NewComponent } from './pages/new/new.component';
+import { HistoryComponent } from './pages/history/history.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { NewComponent } from './pages/new/new.component';
     LoginComponent,
     LoginCadastroComponent,
     ListComponent,
-    NewComponent
+    NewComponent,
+    HistoryComponent
   ],
   imports: [
     BrowserModule,

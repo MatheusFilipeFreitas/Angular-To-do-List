@@ -29,7 +29,7 @@ export class LoginService {
               if((login == us.email) && (senha == us.senha)){
                 environment.usuarioLogado = true;
                 console.log("Login realizado com sucesso");
-                this.router.navigate([''])
+                this.router.navigate(['/list'])
               }
             }
           );
