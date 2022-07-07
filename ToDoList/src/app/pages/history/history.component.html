@@ -1,0 +1,42 @@
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+  integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+/>
+<header>
+  <i class="fa-solid fa-bars" (click)="showSidebar()"></i>
+  <p class="app-name">JUST TODO IT</p>
+  <i class="fa-solid fa-arrow-right-from-bracket" (click)="logout()"></i>
+</header>
+<main>
+  <div id="sidenav">
+    <ul class="nav-list">
+      <li class="nav-item" routerLink="/list" routerLinkActive="active">
+        List
+      </li>
+      <li class="nav-item" routerLink="/history" routerLinkActive="active">
+        History
+      </li>
+    </ul>
+  </div>
+  <div class="table-responsive">
+    <table class="table table-dark">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Terminada</th>
+          <th scope="col">Descrição</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of items">
+          <th scope="row">{{ item.id }}</th>
+          <td>{{ item.terminada == "" ? "Em andamento" : item.terminada }}</td>
+          <td>{{ item.descricao }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</main>
