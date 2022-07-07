@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { LoginService } from './services/login.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-root',
@@ -22,22 +22,11 @@ export class AppComponent {
   
 
   validaLogin(){
-
-    LoginService.empresaLogada.subscribe(
-      {
-        next:(data:boolean)=>{
-          if(data){ //Se a empresa está logada ela vai para
-            this.router.navigate(['/home'])
-            console.log("To na Home");
-          }
-          else{//Se ela não está logada ela vai para a área de login/cadastro
-            this.router.navigate(['/login'])
-            console.log("Entrei aqui");
-          }
-        }
-      }
-    );
-
-    
+    if(environment.empresaLogada){
+      this.router.navigate(['/home']);
+    }
+    else{
+      this.router.navigate(['/login']);
+    }
   }
 }
