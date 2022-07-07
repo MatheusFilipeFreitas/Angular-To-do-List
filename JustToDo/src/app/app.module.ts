@@ -11,7 +11,6 @@ import { LoginComponent } from './pages/login/login/login.component';
 import { LoginCadastroComponent } from './pages/login/login-cadastro/login-cadastro.component';
 import { ListComponent } from './pages/list/list.component';
 import {MatInputModule} from '@angular/material/input';
-import { NewComponent } from './pages/new/new.component';
 import { HistoryComponent } from './pages/history/history.component';
 
 
@@ -21,7 +20,6 @@ import { HistoryComponent } from './pages/history/history.component';
     LoginComponent,
     LoginCadastroComponent,
     ListComponent,
-    NewComponent,
     HistoryComponent
   ],
   imports: [
