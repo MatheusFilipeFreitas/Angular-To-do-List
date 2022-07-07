@@ -203,9 +203,10 @@ main #list .list-item p {
 .fa-circle-plus {
     position: fixed;
     padding-top: 6px;
+    padding-bottom: 30px;
     padding-right: 30px;
     transform: scale(5);
-    bottom: 1;
+    bottom: 0;
     right: 0;
     cursor: pointer;
     color: #00f9b6;
