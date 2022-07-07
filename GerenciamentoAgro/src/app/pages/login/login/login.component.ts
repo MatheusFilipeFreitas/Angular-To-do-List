@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { LoginService } from 'src/app/services/login.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-login',
@@ -11,31 +12,26 @@ export class LoginComponent implements OnInit {
 
   login: string;
   senha: string;
+  usuarioLogado:boolean;
 
   constructor(private loginService: LoginService, private router: Router) { 
   }
 
   ngOnInit(): void {
-    
+    this.usuarioLogado = environment.usuarioLogado;
+    this.validarLogin();
+  }
+
+  validarLogin(){
+
+    if(this.usuarioLogado){
+      this.router.navigate([''])
+    }
+
   }
 
   logar(){
-
-    this.loginService.validarLogin(this.login,this.senha)
-    
-    //pega no service do login se tem empresa logada e popula na variável local
-    LoginService.empresaLogada.subscribe(
-      {
-        next: (data:boolean) => {
-          if(data){
-            this.router.navigate(['/home'])//Encaminhar para a home
-          }
-          else{
-            //mandar a mensagem do snackbar de falha no login
-          }
-        }
-      }
-    );
+    this.loginService.validarLogin(this.login,this.senha);  
   }
 
 }

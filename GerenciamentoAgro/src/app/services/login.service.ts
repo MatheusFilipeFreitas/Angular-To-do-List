@@ -1,18 +1,18 @@
 import { Injectable, EventEmitter} from '@angular/core';
-import { Empresa } from '../models/Empresa.model';
-import { EmpresaService } from './empresa.service';
+import { environment } from 'src/environments/environment';
+import { Router } from '@angular/router';
+import { Usuario } from '../models/usuario.model';
+import { UsuarioService } from './usuario.service';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoginService {
 
-  empresasCadastradas: Empresa[];
-  static empresaLogada = new EventEmitter<boolean>();
-  static empresa = new EventEmitter<Empresa>();
+  usuariosCadastrados: Usuario[];
 
-  constructor(private empresaService: EmpresaService) { 
-
+  constructor(private usuarioService: UsuarioService, private router: Router) { 
   }
 
   ngOnInit(){
@@ -20,17 +20,16 @@ export class LoginService {
   }
 
   validarLogin(login: string, senha: string){
-    LoginService.empresaLogada.emit(false);
 
-    this.empresaService.getEmpresas().subscribe(
+    this.usuarioService.getUsuarios().subscribe(
       {
-        next:(data: Empresa[])=>{
+        next:(data: Usuario[])=>{
           data.forEach(
-            (emp)=>{
-              if((login == emp.email) && (senha == emp.senha)){
-                LoginService.empresaLogada.emit(true);//popula que a empresa existe e está logada
-                LoginService.empresa.emit(emp); //popula os dados da empresa
+            (us)=>{
+              if((login == us.email) && (senha == us.senha)){
+                environment.usuarioLogado = true;
                 console.log("Login realizado com sucesso");
+                this.router.navigate([''])
               }
             }
           );

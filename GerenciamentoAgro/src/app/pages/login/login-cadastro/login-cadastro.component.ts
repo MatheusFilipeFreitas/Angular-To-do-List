@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Empresa } from 'src/app/models/Empresa.model';
-import { EmpresaService } from 'src/app/services/empresa.service';
+import { Usuario } from 'src/app/models/usuario.model';
+import { UsuarioService } from 'src/app/services/usuario.service';
 
 @Component({
   selector: 'app-login-cadastro',
@@ -9,14 +9,12 @@ import { EmpresaService } from 'src/app/services/empresa.service';
   styleUrls: ['./login-cadastro.component.css']
 })
 export class LoginCadastroComponent implements OnInit {
-  empresa: Empresa = new Empresa();
+  usuario: Usuario = new Usuario();
   nome: string;
-  cnpj: string;
-  endereco: string;
   email: string;
   senha: string;
 
-  constructor(private empresaService: EmpresaService, private router: Router) {
+  constructor(private usuarioService: UsuarioService, private router: Router) {
   }
 
   ngOnInit(): void {
@@ -24,11 +22,11 @@ export class LoginCadastroComponent implements OnInit {
   }
 
   cadastrar(){
-    this.empresa.popular(0,this.nome,this.email,this.cnpj,this.endereco,this.senha);    
+    this.usuario.popular(0,this.nome,this.email,this.senha);    
 
-    this.empresaService.postEmpresa(this.empresa).subscribe(
+    this.usuarioService.postUsuario(this.usuario).subscribe(
       {
-        next: (data: Empresa) => {console.log("Empresa cadastrada com sucesso >> ", data); this.router.navigate(['/login'])},
+        next: (data: Usuario) => {console.log("Usuario cadastrado com sucesso >> ", data); this.router.navigate(['/login'])},
         error: (error: any) => {console.log("Erro >> " + error)}
       }
     )
