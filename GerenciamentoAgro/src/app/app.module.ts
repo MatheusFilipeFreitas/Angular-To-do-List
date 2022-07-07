@@ -9,13 +9,18 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './pages/login/login/login.component';
 import { LoginCadastroComponent } from './pages/login/login-cadastro/login-cadastro.component';
+import { ListComponent } from './pages/list/list.component';
+import {MatInputModule} from '@angular/material/input';
+import { NewComponent } from './pages/new/new.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    LoginCadastroComponent
+    LoginCadastroComponent,
+    ListComponent,
+    NewComponent
   ],
   imports: [
     BrowserModule,
@@ -23,7 +28,8 @@ import { LoginCadastroComponent } from './pages/login/login-cadastro/login-cadas
     FormsModule,
     HttpClientModule,
     MatSnackBarModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]
